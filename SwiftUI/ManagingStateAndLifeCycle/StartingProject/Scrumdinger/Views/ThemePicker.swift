@@ -1,15 +1,12 @@
-//
-//  ThemePicker.swift
-//  Scrumdinger
-//
-//  Created by 준우의 MacBook 16 on 12/1/23.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct ThemePicker: View {
     @Binding var selection: Theme
-
+    
     var body: some View {
         Picker("Theme", selection: $selection) {
             ForEach(Theme.allCases) { theme in
@@ -21,6 +18,8 @@ struct ThemePicker: View {
     }
 }
 
-#Preview {
-    ThemePicker(selection: .constant(.periwinkle))
+struct ThemePicker_Previews: PreviewProvider {
+    static var previews: some View {
+        ThemePicker(selection: .constant(.periwinkle))
+    }
 }
