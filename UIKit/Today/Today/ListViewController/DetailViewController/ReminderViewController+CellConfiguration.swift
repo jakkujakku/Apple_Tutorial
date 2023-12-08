@@ -32,6 +32,9 @@ extension ReminderViewController
     {
         var contentConfiguration = cell.textFieldConfiguration()
         contentConfiguration.text = title
+        contentConfiguration.onChange = { [weak self] title in
+            self?.workReminder.title = title
+        }
         return contentConfiguration
     }
 
@@ -40,6 +43,9 @@ extension ReminderViewController
     {
         var contentConfiguration = cell.datePickerConfiguration()
         contentConfiguration.date = date
+        contentConfiguration.onChange = { [weak self] dueDate in
+            self?.workReminder.dueDate = dueDate
+        }
         return contentConfiguration
     }
 
@@ -48,6 +54,9 @@ extension ReminderViewController
     {
         var contentConfiguration = cell.textViewConfiguration()
         contentConfiguration.text = notes
+        contentConfiguration.onChange = { [weak self] notes in
+            self?.workReminder.notes = notes
+        }
         return contentConfiguration
     }
 
